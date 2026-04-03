@@ -1,0 +1,6 @@
+plugin:
+    name: 'pensoft.projectinitiatives::lang.plugin.name'
+    description: 'pensoft.projectinitiatives::lang.plugin.description'
+    author: Pensoft
+    icon: oc-icon-pagelines
+    homepage: ''

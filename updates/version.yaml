@@ -1,0 +1,38 @@
+1.0.1:
+    - Initialize plugin.
+1.0.2:
+    - Create types table.
+    - builder_table_create_pensoft_projectinitiatives_types.php
+1.0.3:
+    - Seed default types.
+    - seed_pensoft_projectinitiatives_types.php
+1.0.4:
+    - Create approaches table.
+    - builder_table_create_pensoft_projectinitiatives_approaches.php
+1.0.5:
+    - Seed default approaches.
+    - seed_pensoft_projectinitiatives_approaches.php
+1.0.6:
+    - Create landscapes table.
+    - builder_table_create_pensoft_projectinitiatives_landscapes.php
+1.0.7:
+    - Seed default landscapes.
+    - seed_pensoft_projectinitiatives_landscapes.php
+1.0.8:
+    - Create regions table.
+    - builder_table_create_pensoft_projectinitiatives_regions.php
+1.0.9:
+    - Seed default regions.
+    - seed_pensoft_projectinitiatives_regions.php
+1.0.10:
+    - Create fundings table.
+    - builder_table_create_pensoft_projectinitiatives_fundings.php
+1.0.11:
+    - Seed default fundings.
+    - seed_pensoft_projectinitiatives_fundings.php
+1.0.12:
+    - Create data table.
+    - builder_table_create_pensoft_projectinitiatives_data.php
+1.0.13:
+    - Create data pivot tables for relations.
+    - builder_table_create_pensoft_projectinitiatives_data_pivots.php

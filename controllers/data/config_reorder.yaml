@@ -1,0 +1,5 @@
+title: Data
+modelClass: Pensoft\Projectinitiatives\Models\Data
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

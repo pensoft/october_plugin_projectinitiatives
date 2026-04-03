@@ -1,0 +1,5 @@
+title: Fundings
+modelClass: Pensoft\Projectinitiatives\Models\Funding
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

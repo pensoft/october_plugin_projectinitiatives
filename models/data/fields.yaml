@@ -1,0 +1,73 @@
+fields:
+    title:
+        label: Title
+        span: full
+        required: 1
+        type: text
+    description:
+        label: Description
+        span: full
+        type: richeditor
+        size: small
+    institution:
+        label: Institution
+        span: left
+        type: text
+    website:
+        label: Website
+        span: right
+        type: text
+    image:
+        label: Image
+        span: full
+        type: fileupload
+        mode: image
+        imageHeight: 200
+        imageWidth: 200
+    countries:
+        label: Country
+        span: left
+        type: relation
+        useController: false
+        nameFrom: name
+    regions:
+        label: Region
+        span: right
+        type: relation
+        useController: false
+        nameFrom: title
+    types:
+        label: Type
+        span: left
+        type: relation
+        useController: false
+        nameFrom: title
+    approaches:
+        label: Approach
+        span: right
+        type: relation
+        useController: false
+        nameFrom: title
+    landscapes:
+        label: Landscape
+        span: left
+        type: relation
+        useController: false
+        nameFrom: title
+    fundings:
+        label: Funding
+        span: right
+        type: relation
+        useController: false
+        nameFrom: title
+    links:
+        label: Links
+        span: full
+        type: repeater
+        prompt: Add link
+        form:
+            fields:
+                link_url:
+                    label: URL
+                    type: text
+                    span: auto

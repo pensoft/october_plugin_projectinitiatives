@@ -1,0 +1,5 @@
+title: Approaches
+modelClass: Pensoft\Projectinitiatives\Models\Approach
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

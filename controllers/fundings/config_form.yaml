@@ -1,0 +1,10 @@
+name: Funding
+form: $/pensoft/projectinitiatives/models/funding/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Funding
+defaultRedirect: pensoft/projectinitiatives/fundings
+create:
+    redirect: 'pensoft/projectinitiatives/fundings/update/:id'
+    redirectClose: pensoft/projectinitiatives/fundings
+update:
+    redirect: pensoft/projectinitiatives/fundings
+    redirectClose: pensoft/projectinitiatives/fundings

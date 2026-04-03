@@ -1,0 +1,12 @@
+list: $/pensoft/projectinitiatives/models/type/columns.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Type
+title: Types
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'pensoft/projectinitiatives/types/update/:id'

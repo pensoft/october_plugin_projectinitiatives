@@ -1,0 +1,10 @@
+name: Region
+form: $/pensoft/projectinitiatives/models/region/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Region
+defaultRedirect: pensoft/projectinitiatives/regions
+create:
+    redirect: 'pensoft/projectinitiatives/regions/update/:id'
+    redirectClose: pensoft/projectinitiatives/regions
+update:
+    redirect: pensoft/projectinitiatives/regions
+    redirectClose: pensoft/projectinitiatives/regions

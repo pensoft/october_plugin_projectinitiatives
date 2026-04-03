@@ -1,0 +1,27 @@
+columns:
+    id:
+        label: ID
+        searchable: true
+        type: number
+    title:
+        label: Title
+        type: text
+        searchable: true
+    institution:
+        label: Institution
+        type: text
+        searchable: true
+    website:
+        label: Website
+        type: text
+        searchable: true
+    sort_order:
+        label: Sort Order
+        type: number
+        sortable: true
+    created_at:
+        label: Created
+        type: timesince
+    updated_at:
+        label: Updated
+        type: timesince

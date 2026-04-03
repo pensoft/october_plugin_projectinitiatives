@@ -1,0 +1,10 @@
+name: Type
+form: $/pensoft/projectinitiatives/models/type/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Type
+defaultRedirect: pensoft/projectinitiatives/types
+create:
+    redirect: 'pensoft/projectinitiatives/types/update/:id'
+    redirectClose: pensoft/projectinitiatives/types
+update:
+    redirect: pensoft/projectinitiatives/types
+    redirectClose: pensoft/projectinitiatives/types

@@ -1,0 +1,5 @@
+title: Landscapes
+modelClass: Pensoft\Projectinitiatives\Models\Landscape
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

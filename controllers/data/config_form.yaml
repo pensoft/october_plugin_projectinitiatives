@@ -1,0 +1,10 @@
+name: Data
+form: $/pensoft/projectinitiatives/models/data/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Data
+defaultRedirect: pensoft/projectinitiatives/data
+create:
+    redirect: 'pensoft/projectinitiatives/data/update/:id'
+    redirectClose: pensoft/projectinitiatives/data
+update:
+    redirect: pensoft/projectinitiatives/data
+    redirectClose: pensoft/projectinitiatives/data

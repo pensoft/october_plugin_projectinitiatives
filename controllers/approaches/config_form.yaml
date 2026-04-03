@@ -1,0 +1,10 @@
+name: Approach
+form: $/pensoft/projectinitiatives/models/approach/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Approach
+defaultRedirect: pensoft/projectinitiatives/approaches
+create:
+    redirect: 'pensoft/projectinitiatives/approaches/update/:id'
+    redirectClose: pensoft/projectinitiatives/approaches
+update:
+    redirect: pensoft/projectinitiatives/approaches
+    redirectClose: pensoft/projectinitiatives/approaches

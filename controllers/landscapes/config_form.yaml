@@ -1,0 +1,10 @@
+name: Landscape
+form: $/pensoft/projectinitiatives/models/landscape/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Landscape
+defaultRedirect: pensoft/projectinitiatives/landscapes
+create:
+    redirect: 'pensoft/projectinitiatives/landscapes/update/:id'
+    redirectClose: pensoft/projectinitiatives/landscapes
+update:
+    redirect: pensoft/projectinitiatives/landscapes
+    redirectClose: pensoft/projectinitiatives/landscapes

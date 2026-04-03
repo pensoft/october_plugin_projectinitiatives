@@ -1,0 +1,40 @@
+<?= Form::open(['class' => 'layout']) ?>
+
+    <div class="layout-row">
+        <?= $this->formRender() ?>
+    </div>
+
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button
+                type="submit"
+                data-request="onSave"
+                data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Saving Data..."
+                class="btn btn-primary">
+                Save
+            </button>
+            <button
+                type="button"
+                data-request="onSave"
+                data-request-data="close:1"
+                data-hotkey="ctrl+enter, cmd+enter"
+                data-load-indicator="Saving Data..."
+                class="btn btn-default">
+                Save and Close
+            </button>
+            <button
+                type="button"
+                class="oc-icon-trash-o btn btn-danger pull-right"
+                data-request="onDelete"
+                data-load-indicator="Deleting Data..."
+                data-request-confirm="Are you sure?">
+                Delete
+            </button>
+            <span class="btn-text">
+                or <a href="<?= Backend::url('pensoft/projectinitiatives/data') ?>">Cancel</a>
+            </span>
+        </div>
+    </div>
+
+<?= Form::close() ?>
