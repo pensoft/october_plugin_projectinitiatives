@@ -33,6 +33,7 @@ class Data extends Model
             'table' => 'pensoft_projectinitiatives_data_country',
             'key' => 'data_id',
             'otherKey' => 'country_id',
+            'conditions' => 'is_enabled = true',
         ],
         'regions' => [
             'Pensoft\Projectinitiatives\Models\Region',

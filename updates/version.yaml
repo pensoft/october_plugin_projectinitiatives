@@ -36,3 +36,6 @@
 1.0.13:
     - Create data pivot tables for relations.
     - builder_table_create_pensoft_projectinitiatives_data_pivots.php
+1.0.14:
+    - Seed initiative data with relations.
+    - seed_pensoft_projectinitiatives_data.php
