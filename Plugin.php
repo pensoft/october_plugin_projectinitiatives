@@ -6,6 +6,9 @@ class Plugin extends PluginBase
 {
     public function registerComponents()
     {
+        return [
+            \Pensoft\Projectinitiatives\Components\InitiativesList::class => 'initiativesList',
+        ];
     }
 
     public function registerSettings()

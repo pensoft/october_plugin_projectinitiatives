@@ -1,8 +1,15 @@
 fields:
     title:
         label: Title
-        span: full
+        span: left
         required: 1
+        type: text
+    slug:
+        label: Slug
+        span: right
+        preset:
+            field: title
+            type: slug
         type: text
     description:
         label: Description
@@ -64,7 +71,7 @@ fields:
         label: Links
         span: full
         type: repeater
-        prompt: Add link
+        prompt: 'Add link'
         form:
             fields:
                 link_url:

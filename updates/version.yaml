@@ -39,3 +39,6 @@
 1.0.14:
     - Seed initiative data with relations.
     - seed_pensoft_projectinitiatives_data.php
+1.0.15:
+    - Add slug column to data table.
+    - builder_table_add_slug_to_data.php

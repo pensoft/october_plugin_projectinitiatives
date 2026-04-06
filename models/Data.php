@@ -1,12 +1,14 @@
 <?php namespace Pensoft\Projectinitiatives\Models;
 
 use Model;
+use October\Rain\Database\Traits\Sluggable;
 
 class Data extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sortable;
     use \October\Rain\Database\Traits\SoftDelete;
+    use Sluggable;
 
     public $table = 'pensoft_projectinitiatives_data';
 
@@ -14,7 +16,9 @@ class Data extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['title', 'description', 'institution', 'website', 'links'];
+    protected $slugs = ['slug' => 'title'];
+
+    protected $fillable = ['title', 'description', 'institution', 'website', 'links', 'slug'];
 
     protected $jsonable = ['links'];
 
