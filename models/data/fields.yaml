@@ -1,4 +1,9 @@
 fields:
+    is_active:
+        label: Active
+        span: left
+        type: switch
+        default: true
     title:
         label: Title
         span: left

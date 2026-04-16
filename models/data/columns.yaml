@@ -15,6 +15,10 @@ columns:
         label: Website
         type: text
         searchable: true
+    is_active:
+        label: Active
+        type: switch
+        sortable: true
     sort_order:
         label: Sort Order
         type: number

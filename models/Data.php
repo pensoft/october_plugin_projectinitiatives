@@ -18,9 +18,13 @@ class Data extends Model
 
     protected $slugs = ['slug' => 'title'];
 
-    protected $fillable = ['title', 'description', 'institution', 'website', 'links', 'slug'];
+    protected $fillable = ['title', 'description', 'institution', 'website', 'links', 'slug', 'is_active'];
 
     protected $jsonable = ['links'];
+
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
 
     public $rules = [
         'title' => 'required',
@@ -74,6 +78,11 @@ class Data extends Model
     public $attachOne = [
         'image' => 'System\Models\File',
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->whereRaw('is_active = true');
+    }
 
     public static function boot()
     {

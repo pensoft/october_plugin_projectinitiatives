@@ -44,3 +44,6 @@
     - builder_table_add_slug_to_data.php
 1.0.16:
     - Add frontend form.
+1.0.17:
+    - Add is_active column to data table.
+    - builder_table_add_is_active_to_data.php

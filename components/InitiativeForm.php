@@ -46,6 +46,7 @@ class InitiativeForm extends ComponentBase
         $initiative->description = $data['description'] ?? '';
         $initiative->institution = $data['institution'] ?? '';
         $initiative->website = $data['website'] ?? '';
+        $initiative->is_active = false;
 
         $initiative->validate();
         $initiative->save();

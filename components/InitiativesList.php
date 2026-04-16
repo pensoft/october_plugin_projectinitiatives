@@ -29,13 +29,13 @@ class InitiativesList extends ComponentBase
         $slug = $this->param('slug');
 
         if ($slug) {
-            $this->page['initiative'] = Data::where('slug', $slug)->first();
+            $this->page['initiative'] = Data::where('slug', $slug)->active()->first();
             $this->page['is_detail_page'] = (bool)$this->page['initiative'];
         } else {
             $this->page['is_detail_page'] = false;
         }
 
-        $this->page['records'] = Data::orderBy('sort_order')->get();
+        $this->page['records'] = Data::active()->orderBy('sort_order')->get();
         $this->page['totalCount'] = $this->page['records']->count();
         $this->page['available_countries'] = $this->getAvailableCountries();
         $this->page['regions'] = Region::orderBy('sort_order')->get();
@@ -82,7 +82,7 @@ class InitiativesList extends ComponentBase
         $sortLandscape = 0,
         $sortFunding = 0
     ) {
-        $query = Data::orderBy('sort_order');
+        $query = Data::active()->orderBy('sort_order');
 
         // Text search
         $searchTerms = is_string($searchTerms) ? json_decode($searchTerms, true) : (array)$searchTerms;
