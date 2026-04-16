@@ -35,8 +35,8 @@ class InitiativesList extends ComponentBase
             $this->page['is_detail_page'] = false;
         }
 
-        $this->page['records'] = Data::orderBy('sort_order')->paginate(12);
-        $this->page['totalCount'] = $this->page['records']->total();
+        $this->page['records'] = Data::orderBy('sort_order')->get();
+        $this->page['totalCount'] = $this->page['records']->count();
         $this->page['available_countries'] = $this->getAvailableCountries();
         $this->page['regions'] = Region::orderBy('sort_order')->get();
         $this->page['types'] = Type::orderBy('sort_order')->get();
@@ -65,9 +65,9 @@ class InitiativesList extends ComponentBase
 
         $this->page['records'] = $this->searchRecords(
             $searchTerms, $sortCountry, $sortRegion, $sortType,
-            $sortApproach, $sortLandscape, $sortFunding, $page
+            $sortApproach, $sortLandscape, $sortFunding
         );
-        $this->page['totalCount'] = $this->page['records']->total();
+        $this->page['totalCount'] = $this->page['records']->count();
         $this->page['available_countries'] = $this->getAvailableCountries();
 
         return ['#recordsContainer' => $this->renderPartial('initiatives_records')];
@@ -80,8 +80,7 @@ class InitiativesList extends ComponentBase
         $sortType = 0,
         $sortApproach = 0,
         $sortLandscape = 0,
-        $sortFunding = 0,
-        $page = 1
+        $sortFunding = 0
     ) {
         $query = Data::orderBy('sort_order');
 
@@ -134,6 +133,6 @@ class InitiativesList extends ComponentBase
             });
         }
 
-        return $query->paginate(12, $page);
+        return $query->get();
     }
 }

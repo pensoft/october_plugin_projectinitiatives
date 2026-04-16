@@ -8,6 +8,7 @@ class Plugin extends PluginBase
     {
         return [
             \Pensoft\Projectinitiatives\Components\InitiativesList::class => 'initiativesList',
+            \Pensoft\Projectinitiatives\Components\InitiativeForm::class => 'initiativeForm',
         ];
     }
 
