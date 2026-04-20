@@ -19,6 +19,11 @@ columns:
         label: Active
         type: switch
         sortable: true
+    is_confirmed:
+        label: Confirmed
+        type: partial
+        path: ~/plugins/pensoft/projectinitiatives/controllers/data/_column_confirmed.htm
+        sortable: true
     sort_order:
         label: Sort Order
         type: number

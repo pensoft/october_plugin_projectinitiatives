@@ -1,1 +1,33 @@
+<style>
+    tr.not-confirmed-row {
+        background-color: rgba(231, 76, 60, 0.08) !important;
+    }
+    tr.not-confirmed-row:hover {
+        background-color: rgba(231, 76, 60, 0.14) !important;
+    }
+</style>
+
 <?= $this->listRender() ?>
+
+<script>
+    $(document).ready(function() {
+        highlightNotConfirmed();
+        $(document).on('ajaxComplete', function() {
+            setTimeout(highlightNotConfirmed, 100);
+        });
+    });
+
+    function highlightNotConfirmed() {
+        $('.control-list table tbody tr').each(function() {
+            var $row = $(this);
+            var confirmedText = $row.find('td').filter(function() {
+                return $(this).find('span').text().trim() === 'Not confirmed!!!';
+            });
+            if (confirmedText.length) {
+                $row.addClass('not-confirmed-row');
+            } else {
+                $row.removeClass('not-confirmed-row');
+            }
+        });
+    }
+</script>

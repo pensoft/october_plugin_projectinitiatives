@@ -12,6 +12,14 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMailTemplates()
+    {
+        return [
+            'pensoft.projectinitiatives::mail.confirm' => 'Confirmation email sent to the initiative submitter.',
+            'pensoft.projectinitiatives::mail.notify-admin' => 'Notification email sent to admin after submitter confirms.',
+        ];
+    }
+
     public function registerSettings()
     {
     }

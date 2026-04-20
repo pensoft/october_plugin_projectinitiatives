@@ -4,6 +4,16 @@ fields:
         span: left
         type: switch
         default: true
+    submitter_name:
+        label: Submitter Name
+        span: left
+        type: text
+        disabled: true
+    submitter_email:
+        label: Submitter Email
+        span: right
+        type: text
+        disabled: true
     title:
         label: Title
         span: left

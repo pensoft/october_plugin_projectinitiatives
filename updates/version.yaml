@@ -47,3 +47,12 @@
 1.0.17:
     - Add is_active column to data table.
     - builder_table_add_is_active_to_data.php
+1.0.18:
+    - Add submitter name and email fields to data table.
+    - builder_table_add_submitter_fields_to_data.php
+1.0.19:
+    - Add confirmation token and is_confirmed fields to data table.
+    - builder_table_add_confirmation_to_data.php
+1.0.20:
+    - Set all existing records as confirmed and change default to true.
+    - builder_table_set_confirmed_default_true.php

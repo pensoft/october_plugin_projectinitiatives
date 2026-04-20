@@ -18,12 +18,13 @@ class Data extends Model
 
     protected $slugs = ['slug' => 'title'];
 
-    protected $fillable = ['title', 'description', 'institution', 'website', 'links', 'slug', 'is_active'];
+    protected $fillable = ['title', 'description', 'institution', 'website', 'links', 'slug', 'is_active', 'submitter_name', 'submitter_email', 'confirmation_token', 'is_confirmed'];
 
     protected $jsonable = ['links'];
 
     protected $casts = [
         'is_active' => 'boolean',
+        'is_confirmed' => 'boolean',
     ];
 
     public $rules = [
