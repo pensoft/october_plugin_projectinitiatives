@@ -12,6 +12,8 @@ use Flash;
 use Mail;
 use Redirect;
 use Str;
+use Multiwebinc\Recaptcha\Validators\RecaptchaValidator;
+use Multiwebinc\Recaptcha\Models\Settings as RecaptchaSettings;
 
 class InitiativeForm extends ComponentBase
 {
@@ -43,6 +45,7 @@ class InitiativeForm extends ComponentBase
         $this->page['approaches'] = Approach::orderBy('sort_order')->get();
         $this->page['landscapes'] = Landscape::orderBy('sort_order')->get();
         $this->page['fundings'] = Funding::orderBy('sort_order')->get();
+        $this->page['recaptchaSiteKey'] = RecaptchaSettings::get('site_key');
 
         // Handle confirmation via URL token
         $token = input('confirm');
@@ -59,12 +62,14 @@ class InitiativeForm extends ComponentBase
             'submitter_name' => 'required',
             'submitter_email' => 'required|email',
             'title' => 'required',
+            'g-recaptcha-response' => ['required', new RecaptchaValidator],
         ];
         $validation = \Validator::make($data, $rules, [
             'submitter_name.required' => 'Please enter your name.',
             'submitter_email.required' => 'Please enter your email.',
             'submitter_email.email' => 'Please enter a valid email address.',
             'title.required' => 'Please enter the initiative name.',
+            'g-recaptcha-response.required' => 'Please complete the reCAPTCHA verification.',
         ]);
         if ($validation->fails()) {
             throw new \ValidationException($validation);
