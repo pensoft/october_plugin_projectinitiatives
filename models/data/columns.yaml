@@ -24,10 +24,6 @@ columns:
         type: partial
         path: ~/plugins/pensoft/projectinitiatives/controllers/data/_column_confirmed.htm
         sortable: true
-    sort_order:
-        label: Sort Order
-        type: number
-        sortable: true
     created_at:
         label: Created
         type: timesince

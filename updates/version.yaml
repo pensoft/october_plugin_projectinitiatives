@@ -56,3 +56,5 @@
 1.0.20:
     - Set all existing records as confirmed and change default to true.
     - builder_table_set_confirmed_default_true.php
+1.0.21:
+    - Fix
