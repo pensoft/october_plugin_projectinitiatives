@@ -29,8 +29,8 @@ class InitiativeForm extends ComponentBase
     {
         return [
             'recipientEmail' => [
-                'title' => 'Recipient Email',
-                'description' => 'Email address to notify when a submission is confirmed',
+                'title' => 'Recipient Email(s)',
+                'description' => 'Email addresses to notify when a submission is confirmed. Comma separated for multiple recipients (e.g. admin@example.com, manager@example.com)',
                 'default' => 'kkaleva@pensoft.net',
                 'type' => 'string',
             ],
@@ -146,8 +146,9 @@ class InitiativeForm extends ComponentBase
         $initiative->confirmation_token = null;
         $initiative->save();
 
-        // Send notification to admin/recipient
-        $recipientEmail = $this->property('recipientEmail', 'kkaleva@pensoft.net');
+        // Send notification to admin/recipients (comma separated)
+        $recipientEmails = $this->property('recipientEmail', 'kkaleva@pensoft.net');
+        $recipients = array_filter(array_map('trim', explode(',', $recipientEmails)));
         $backendUrl = url('/admin/pensoft/projectinitiatives/data/update/' . $initiative->id);
 
         Mail::send('pensoft.projectinitiatives::mail.notify-admin', [
@@ -155,8 +156,10 @@ class InitiativeForm extends ComponentBase
             'name' => $initiative->submitter_name,
             'email' => $initiative->submitter_email,
             'backend_url' => $backendUrl,
-        ], function ($message) use ($recipientEmail) {
-            $message->to($recipientEmail);
+        ], function ($message) use ($recipients) {
+            foreach ($recipients as $email) {
+                $message->to($email);
+            }
         });
 
         Flash::success('Your submission has been confirmed. Thank you!');

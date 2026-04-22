@@ -58,3 +58,5 @@
     - builder_table_set_confirmed_default_true.php
 1.0.21:
     - Fix
+1.0.22:
+    - Recipients
