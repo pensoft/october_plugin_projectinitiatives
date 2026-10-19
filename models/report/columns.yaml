@@ -17,10 +17,16 @@ columns:
         label: Message
         type: text
         searchable: true
+    reporter_name:
+        label: Reported by
+        type: text
+        searchable: true
+        sortable: true
     reporter_email:
         label: Reporter email
         type: text
         searchable: true
+        sortable: true
     status:
         label: Status
         type: partial

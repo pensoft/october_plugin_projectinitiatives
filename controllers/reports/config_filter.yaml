@@ -1,0 +1,7 @@
+scopes:
+    status:
+        label: Status
+        type: group
+        modelClass: Pensoft\Projectinitiatives\Models\Report
+        options: getStatusOptions
+        conditions: status in (:filtered)

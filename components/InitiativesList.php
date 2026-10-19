@@ -98,14 +98,16 @@ class InitiativesList extends ComponentBase
         $validation = \Validator::make($data, [
             'issue_type' => 'required|in:' . implode(',', array_keys(Report::getIssueTypes())),
             'message' => 'required|max:5000',
-            'reporter_name' => 'nullable|max:255',
-            'reporter_email' => 'nullable|email|max:255',
+            'reporter_name' => 'required|max:255',
+            'reporter_email' => 'required|email|max:255',
             'g-recaptcha-response' => ['required', new RecaptchaValidator],
         ], [
             'issue_type.required' => 'Please choose the type of issue.',
             'issue_type.in' => 'Please choose the type of issue.',
             'message.required' => 'Please describe the issue.',
             'message.max' => 'Please keep the description under 5000 characters.',
+            'reporter_name.required' => 'Please enter your name.',
+            'reporter_email.required' => 'Please enter your email.',
             'reporter_email.email' => 'Please enter a valid email address.',
             'g-recaptcha-response.required' => 'Please complete the reCAPTCHA verification.',
         ]);
@@ -117,8 +119,8 @@ class InitiativesList extends ComponentBase
         $report->data_id = $initiative->id;
         $report->issue_type = $data['issue_type'];
         $report->message = trim($data['message']);
-        $report->reporter_name = trim($data['reporter_name'] ?? '') ?: null;
-        $report->reporter_email = trim($data['reporter_email'] ?? '') ?: null;
+        $report->reporter_name = trim($data['reporter_name']);
+        $report->reporter_email = trim($data['reporter_email']);
         $report->status = 'open';
         $report->save();
 

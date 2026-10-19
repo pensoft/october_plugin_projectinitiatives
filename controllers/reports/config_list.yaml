@@ -13,3 +13,4 @@ toolbar:
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'pensoft/projectinitiatives/reports/update/:id'
+filter: config_filter.yaml

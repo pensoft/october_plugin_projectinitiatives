@@ -72,3 +72,5 @@
 1.0.26:
     - Add Cyprus to Southern Europe.
     - seed_pensoft_projectinitiatives_region_cyprus.php
+1.0.27:
+    - Reports fixes
