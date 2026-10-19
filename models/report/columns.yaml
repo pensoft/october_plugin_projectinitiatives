@@ -1,0 +1,32 @@
+columns:
+    id:
+        label: ID
+        searchable: true
+        type: number
+    initiative:
+        label: Initiative
+        relation: initiative
+        select: title
+        searchable: true
+    issue_type:
+        label: Issue type
+        type: partial
+        path: ~/plugins/pensoft/projectinitiatives/controllers/reports/_column_issue_type.htm
+        sortable: true
+    message:
+        label: Message
+        type: text
+        searchable: true
+    reporter_email:
+        label: Reporter email
+        type: text
+        searchable: true
+    status:
+        label: Status
+        type: partial
+        path: ~/plugins/pensoft/projectinitiatives/controllers/reports/_column_status.htm
+        sortable: true
+    created_at:
+        label: Reported
+        type: timesince
+        sortable: true

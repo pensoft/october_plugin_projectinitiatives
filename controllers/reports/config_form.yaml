@@ -1,0 +1,7 @@
+name: Report
+form: $/pensoft/projectinitiatives/models/report/fields.yaml
+modelClass: Pensoft\Projectinitiatives\Models\Report
+defaultRedirect: pensoft/projectinitiatives/reports
+update:
+    redirect: pensoft/projectinitiatives/reports
+    redirectClose: pensoft/projectinitiatives/reports

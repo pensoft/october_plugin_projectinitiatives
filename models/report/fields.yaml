@@ -1,0 +1,38 @@
+fields:
+    initiative:
+        label: Initiative
+        span: left
+        type: relation
+        nameFrom: title
+        readOnly: true
+    issue_type:
+        label: Issue type
+        span: right
+        type: dropdown
+        readOnly: true
+    message:
+        label: Message
+        span: full
+        type: textarea
+        size: large
+        readOnly: true
+    reporter_name:
+        label: Reported by
+        span: left
+        type: text
+        readOnly: true
+    reporter_email:
+        label: Reporter email
+        span: right
+        type: text
+        readOnly: true
+    status:
+        label: Status
+        span: left
+        type: dropdown
+    admin_notes:
+        label: Internal notes
+        comment: Only visible in the backend.
+        span: full
+        type: textarea
+        size: small

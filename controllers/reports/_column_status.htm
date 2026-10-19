@@ -1,0 +1,7 @@
+<?php if ($record->status === 'open'): ?>
+    <span style="background: #e74c3c; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;">Open</span>
+<?php elseif ($record->status === 'resolved'): ?>
+    <span style="color: #4FAD42; font-weight: 600;">Resolved</span>
+<?php else: ?>
+    <span style="color: #999; font-weight: 600;"><?= e(\Pensoft\Projectinitiatives\Models\Report::getStatuses()[$record->status] ?? $record->status) ?></span>
+<?php endif; ?>

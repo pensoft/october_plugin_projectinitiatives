@@ -17,6 +17,7 @@ class Plugin extends PluginBase
         return [
             'pensoft.projectinitiatives::mail.confirm' => 'Confirmation email sent to the initiative submitter.',
             'pensoft.projectinitiatives::mail.notify-admin' => 'Notification email sent to admin after submitter confirms.',
+            'pensoft.projectinitiatives::mail.notify-report' => 'Notification email sent to admin when a visitor reports an issue on an initiative.',
         ];
     }
 
@@ -77,6 +78,12 @@ class Plugin extends PluginBase
                         'label'       => 'Fundings',
                         'url'         => \Backend::url('pensoft/projectinitiatives/fundings'),
                         'icon'        => 'icon-money',
+                        'permissions' => ['pensoft.projectinitiatives.*'],
+                    ],
+                    'reports' => [
+                        'label'       => 'Reported Issues',
+                        'url'         => \Backend::url('pensoft/projectinitiatives/reports'),
+                        'icon'        => 'icon-flag',
                         'permissions' => ['pensoft.projectinitiatives.*'],
                     ],
 

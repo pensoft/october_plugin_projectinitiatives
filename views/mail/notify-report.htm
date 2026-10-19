@@ -1,0 +1,18 @@
+subject = "Issue reported on initiative: {{ title }}"
+==
+Hello,
+
+A visitor has reported an issue on an initiative page.
+
+**Initiative:** {{ title|e }}
+**Issue type:** {{ issue_type|e }}
+**Reported by:** {{ name ? name|e : 'Not provided' }}{% if email %} ({{ email|e }}){% endif %}
+
+**Message:**
+
+{{ message|e|nl2br }}
+
+<a href="{{ page_url }}">View initiative on the site</a> · <a href="{{ backend_url }}">Review the report in the backend</a>
+
+Best regards,
+The LaFERIA System

@@ -60,3 +60,15 @@
     - Fix
 1.0.22:
     - Recipients
+1.0.23:
+    - Create region to country pivot table.
+    - builder_table_create_pensoft_projectinitiatives_region_country.php
+1.0.24:
+    - Create reports table for user-submitted issues on initiatives.
+    - builder_table_create_pensoft_projectinitiatives_reports.php
+1.0.25:
+    - Pre-fill European regions with their countries (UN geoscheme).
+    - seed_pensoft_projectinitiatives_region_countries.php
+1.0.26:
+    - Add Cyprus to Southern Europe.
+    - seed_pensoft_projectinitiatives_region_cyprus.php

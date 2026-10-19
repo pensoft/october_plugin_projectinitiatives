@@ -4,3 +4,11 @@ fields:
         span: auto
         required: 1
         type: text
+    countries:
+        label: Countries
+        comment: Countries in this region. On the initiatives page, selecting this region limits the country filter to these countries only.
+        span: full
+        type: taglist
+        mode: relation
+        nameFrom: name
+        customTags: false

@@ -24,6 +24,17 @@ class Region extends Model
         'title',
     ];
 
+    public $belongsToMany = [
+        'countries' => [
+            'RainLab\Location\Models\Country',
+            'table' => 'pensoft_projectinitiatives_region_country',
+            'key' => 'region_id',
+            'otherKey' => 'country_id',
+            'conditions' => 'is_enabled = true',
+            'order' => 'name',
+        ],
+    ];
+
     public static function boot()
     {
         parent::boot();
