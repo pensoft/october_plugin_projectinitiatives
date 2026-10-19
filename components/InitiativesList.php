@@ -10,7 +10,9 @@ use Pensoft\Projectinitiatives\Models\Funding;
 use Pensoft\Projectinitiatives\Models\Report;
 use RainLab\Location\Models\Country;
 use ApplicationException;
+use App;
 use Backend;
+use Log;
 use Mail;
 use Multiwebinc\Recaptcha\Validators\RecaptchaValidator;
 use Multiwebinc\Recaptcha\Models\Settings as RecaptchaSettings;
@@ -126,7 +128,7 @@ class InitiativesList extends ComponentBase
 
         $recipients = array_filter(array_map('trim', explode(',', $this->property('recipientEmail', 'kkaleva@pensoft.net'))));
         if (!empty($recipients)) {
-            Mail::send('pensoft.projectinitiatives::mail.notify-report', [
+            $mailData = [
                 'title' => $initiative->title,
                 'issue_type' => $report->issue_type_label,
                 'message' => $report->message,
@@ -134,12 +136,22 @@ class InitiativesList extends ComponentBase
                 'email' => $report->reporter_email,
                 'page_url' => url('/project-initiatives/' . $initiative->slug),
                 'backend_url' => Backend::url('pensoft/projectinitiatives/reports/update/' . $report->id),
-            ], function ($message) use ($recipients, $report) {
-                foreach ($recipients as $email) {
-                    $message->to($email);
-                }
-                if ($report->reporter_email) {
-                    $message->replyTo($report->reporter_email, $report->reporter_name);
+            ];
+
+            // Send the notification after the response has gone to the browser, so a slow
+            // mail server can't delay the visitor's request into a gateway timeout.
+            App::terminating(function () use ($mailData, $recipients, $report) {
+                try {
+                    Mail::send('pensoft.projectinitiatives::mail.notify-report', $mailData, function ($message) use ($recipients, $report) {
+                        foreach ($recipients as $email) {
+                            $message->to($email);
+                        }
+                        if ($report->reporter_email) {
+                            $message->replyTo($report->reporter_email, $report->reporter_name);
+                        }
+                    });
+                } catch (\Exception $ex) {
+                    Log::error('Could not send the report notification for report #' . $report->id . ': ' . $ex->getMessage());
                 }
             });
         }
